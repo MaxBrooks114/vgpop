@@ -13,3 +13,10 @@ price
 link to buy
 
 genre and console will be objects as well as video games so user can search through list for certain genre or console
+
+Game attributes
+  Name
+  console(s)
+  genre(s)
+  review score
+  #reviews
