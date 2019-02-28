@@ -1,3 +1,4 @@
-module Vgpop
+module VgPop
   VERSION = "0.1.0"
 end
+ 
