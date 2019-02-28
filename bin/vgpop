@@ -1,7 +1,5 @@
 #!/usr/bin/env ruby
 
 require './lib/vgpop'
-
+ 
 VgPop::CLI.new.call
-
-puts "it worked!"

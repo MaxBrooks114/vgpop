@@ -1,0 +1,15 @@
+- a Command Line interface that lists the top 10 most popular video games from gamerankings.com-
+
+user will type vgpop
+
+shows a list of video games
+
+video games will have attributes:
+genre
+console
+rating
+number of reviews
+price
+link to buy
+
+genre and console will be objects as well as video games so user can search through list for certain genre or console
