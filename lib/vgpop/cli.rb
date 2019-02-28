@@ -4,30 +4,18 @@ class VgPop::CLI
     puts "Today's most popular video games:"
     list_vgs
     menu
-    goodbye
   end
 
   def list_vgs
-    puts <<-DOC
-      1. Super Smash Bros. Ultimate
-      2. Kingdom Hearts III
-      3. Resident Evil 2
-      4. Apex Legends
-      5. Jump Force
-      6. Tales of Vesperia: Definitive Edition
-      7. Yakuza Kiwami
-      8. Etrian Odyssey Nexus
-      9. Anthem
-     10. God Eater
-    DOC
+    @games = VgPop::Game.popular
  end
 
- def menu
-    input = nil
-     while input != "exit"
+   def menu
+     input = nil
+     while input!= "exit"
        puts "You can enter the number of the game you are interested in to see information about it."
        puts "To see games by console enter the console you're interested in."
-       puts "To see games by genre enter the genre you're interested in."
+       puts "To see games by genre enter  the genre you're interested in."
        puts "To see the game with the best reviews enter best game."
        puts "To see the game with the worst reviews enter worst game"
        puts "Otherwise enter exit to leave"
@@ -46,7 +34,9 @@ class VgPop::CLI
         when "best game"
           puts "game with highest reviews"
         when "worst game"
-          puts "game with worst reviews" 
+          puts "game with worst reviews"
+        when "exit"
+          goodbye
         else
           puts "what you talkin bout bro"
         end
