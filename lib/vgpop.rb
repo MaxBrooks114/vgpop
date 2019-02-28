@@ -1,6 +1,5 @@
-require "vgpop/version"
+require_relative "./vgpop/version"
+require_relative './vgpop/cli'
 
-module Vgpop
-  class Error < StandardError; end
-  # Your code goes here...
-end
+
+ 
