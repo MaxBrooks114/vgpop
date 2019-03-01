@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-
+require "bundler/setup"
 require './lib/vgpop'
 
 Vgpop::CLI.new.call

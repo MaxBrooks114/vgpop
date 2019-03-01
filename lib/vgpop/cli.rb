@@ -1,14 +1,14 @@
 class Vgpop::CLI
 
   def call
-    puts "Today's most popular video games:"
     list_vgs
     menu
   end
 
   def list_vgs
+    puts "Today's most popular video games:"
     @games = Vgpop::Game.popular
- end
+  end
 
    def menu
      input = nil
