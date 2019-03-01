@@ -1,4 +1,4 @@
-class VgPop::Game
+class Vgpop::Game
    attr_accessor :name, :console, :genre, :score, :reviews, :price, :url, :desc
 
   def self.popular
