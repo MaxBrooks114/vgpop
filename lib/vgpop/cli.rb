@@ -23,27 +23,28 @@ class Vgpop::CLI
        puts "To see the game with the worst reviews enter worst game"
        puts "Otherwise enter exit to leave"
         input = gets.strip.downcase
-        if input.to_i > 0
+        case input
+        when "#{input.to_i}"
          game = @games[input.to_i- 1]
-           puts "#{game.name}"
-                "#{game.console}"
-                "#{game.genre}"
-                "#{game.score}"
-                "#{game.reviews}"
-                "#{game.price}"
-                "#{game.url}"
-                "#{game.desc}"
-        elsif input== "xbox one"
-          puts "games on xbox one"
-        elsif input== "action"
+           puts "#{game.name}
+           Console: #{game.console}
+           Genre: #{game.genre}
+           Aggregated review score:#{game.score}
+           No. reviews: #{game.reviews}
+           Price(usd): #{game.price}
+           Purchase url: #{game.url}
+           #{game.desc}".gsub /^\s*/, ''
+        when  "console"
+          puts "games on that console"
+        when  "action"
           puts "action games"
-        elsif input== "best game"
+        when  "best game"
           puts "game with highest reviews"
-        elsif input== "worst game"
+        when "worst game"
           puts "game with worst reviews"
-        elsif input == "list"
+        when "list"
           list_vgs
-        elsif input == "exit"
+        when  "exit"
           goodbye
         else
           puts "what you talkin bout bro"
