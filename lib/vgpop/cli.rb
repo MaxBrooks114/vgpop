@@ -9,7 +9,7 @@ class Vgpop::CLI
     puts "Today's most popular video games on gamerankings.com:"
     @games = Vgpop::Game.games
     @games.each.with_index(1) do |game, i|
-      puts "#{i}. #{game.name}"
+      puts "#{i}.#{game.name}"
     end
   end
 

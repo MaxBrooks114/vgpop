@@ -3,17 +3,23 @@ class Vgpop::Game
    attr_accessor :name, :console, :genre, :score, :reviews, :price, :url, :desc
 
 
+  @@games=[]
 
 
   def initialize(name, console=nil, score=nil)
     @name = name
     @console = console
     @score = score
-    #@@games << self
+    @@games << self
   end
 
   def self.games
-    self.scrape_names
+    @@games
+  end
+
+  def self.consoles
+    self.games.each {|game|}
+       game.console
   end
 
   def self.scrape_gamerankings
@@ -41,19 +47,19 @@ class Vgpop::Game
   end
 
   def self.add_consoles
-      self.create_games_by_name.each do |game|
-            counter = 0
-            game.console= self.scrape_consoles[counter]
-            counter +=1 
-    end
+      self.create_games_by_name.each.with_index {|game,i|
+            game.console = self.scrape_consoles[i]}
+  end
+
+ def self.scrape_scores
+    reviews= self.scrape_gamerankings.map{|game| game.scan(/(\d\S*%)/).last}.compact.join(" ").split
+    popular_reviews= reviews[0,10]
  end
 
-
-  #   reviews= games.map{|game| game.scan(/(\d\S*%)/).last}.compact.join(" ").split
-  #   popular_reviews= reviews[0,10]
-  #   binding.pry
-  # end
-
+ def self.add_scores
+     self.add_consoles.each.with_index {|game,i|
+           game.score = self.scrape_scores[i]}
+ end
 
 
 end
