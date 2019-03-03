@@ -6,8 +6,8 @@ class Vgpop::CLI
   end
 
   def list_vgs
-    puts "Today's most popular video games:"
-    @games = Vgpop::Game.popular
+    puts "Today's most popular video games on gamerankings.com:"
+    @games = Vgpop::Game.games
     @games.each.with_index(1) do |game, i|
       puts "#{i}. #{game.name}"
     end
@@ -21,6 +21,7 @@ class Vgpop::CLI
        puts "To see games by genre enter the genre you're interested in."
        puts "To see the game with the best reviews enter best game."
        puts "To see the game with the worst reviews enter worst game"
+       puts "To see the list again enter list"
        puts "Otherwise enter exit to leave"
         input = gets.strip.downcase
         case input
@@ -36,8 +37,8 @@ class Vgpop::CLI
            #{game.desc}".gsub /^\s*/, ''
         when  "console"
           puts "games on that console"
-        when  "action"
-          puts "action games"
+        when  "genre"
+          puts "games in that genre"
         when  "best game"
           puts "game with highest reviews"
         when "worst game"
