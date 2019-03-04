@@ -1,12 +1,13 @@
 class Vgpop::CLI
 
   def call
+    Vgpop::Scraper.new.scrape_gamerankings
     list_vgs
     menu
   end
 
   def list_vgs
-    puts "The best games of all time according to gamerankings.com:"
+    puts "The current most popular games according to gamerankings.com:"
     @games = Vgpop::Game.games
     @games.each.with_index(1) do |game, i|
       puts "#{i}.#{game.name}"
