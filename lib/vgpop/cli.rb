@@ -40,7 +40,7 @@ class Vgpop::CLI
         when  "exit"
           goodbye
         else
-          confused
+          confused(input)
         end
       end
     end
