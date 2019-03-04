@@ -33,8 +33,7 @@ class Vgpop::CLI
            Genre: #{game.genre}
            Aggregated review score:#{game.score}
            No. reviews: #{game.reviews}
-           Price(usd): #{game.price}
-           Purchase url: #{game.url}
+           Release date: #{game.release_date}
            #{game.desc}".gsub /^\s*/, ''
         when  "console"
           puts "games on that console"
