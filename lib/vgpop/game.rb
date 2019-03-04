@@ -27,11 +27,11 @@ class Vgpop::Game
    @release_date || Vgpop::Scraper.new(url).scrape_release
  end
 
-  def self.games
+ def self.games
     @@games
   end
 
-
+ 
 
 
 end
