@@ -6,7 +6,7 @@ class Vgpop::CLI
   end
 
   def list_vgs
-    puts "Today's most popular video games on gamerankings.com:"
+    puts "The best games of all time according to gamerankings.com:"
     @games = Vgpop::Game.games
     @games.each.with_index(1) do |game, i|
       puts "#{i}.#{game.name}"
