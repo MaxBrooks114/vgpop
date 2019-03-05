@@ -17,7 +17,8 @@ class Vgpop::CLI
    def menu
      input = nil
      while input!= "exit"
-       puts "You can enter the number of the game you are interested in to see information about it."
+       puts "
+       Enter the number of the game you are interested in to see information about it.".gsub(/^\s*/, '')
        puts "To see the list again enter list"
        puts "Otherwise enter exit to leave"
         input = gets.strip.downcase
@@ -31,7 +32,8 @@ class Vgpop::CLI
            Aggregated review score:#{game.score}
            No. reviews: #{game.reviews}
            Release date: #{game.release_date}
-           #{game.desc}".gsub /^\s*/, ''
+           #{game.desc}
+                                         ".gsub(/^\s*/, '')
            else
            confused(input)
            end

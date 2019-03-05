@@ -10,7 +10,7 @@ class Vgpop::Scraper
    end
 
    def scrape_desc
-    scrape_game.search("div.details").text.gsub("\r","").gsub("\t","").gsub("\n","")
+    scrape_game.search("div.details").first.text.gsub("\r","").gsub("\t","").gsub("\n","")
    end
 
    def scrape_reviews
