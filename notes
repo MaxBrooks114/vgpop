@@ -20,3 +20,12 @@ Game attributes
   genre(s)
   review score
   #reviews
+
+
+
+  To do:
+
+  Clean up CLI menus
+  Create individual scraper object
+  Bug fixes:
+    1. 0 counts as 10
