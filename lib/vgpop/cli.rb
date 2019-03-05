@@ -21,7 +21,7 @@ class Vgpop::CLI
        puts "To see the list again enter list"
        puts "Otherwise enter exit to leave"
         input = gets.strip.downcase
-        case input
+        case input.downcase
         when "#{input.to_i}"
           if @games[input.to_i- 1] != nil
            game = @games[input.to_i- 1]
