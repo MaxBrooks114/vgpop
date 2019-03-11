@@ -26,6 +26,7 @@ class Vgpop::CLI
         when "#{input.to_i}"
           if @games[input.to_i- 1] != nil && input.to_i != 0
            game = @games[input.to_i- 1]
+           Vgpop::Gamescraper.new(game.url).scrape_game(input)
            puts "#{game.name}
            Console: #{game.console}
            Genre: #{game.genre}
