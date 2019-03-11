@@ -24,7 +24,7 @@ class Vgpop::CLI
         input = gets.strip.downcase
         case input.downcase
         when "#{input.to_i}"
-          if @games[input.to_i- 1] != nil
+          if @games[input.to_i- 1] != nil && input.to_i != 0
            game = @games[input.to_i- 1]
            puts "#{game.name}
            Console: #{game.console}
@@ -33,10 +33,10 @@ class Vgpop::CLI
            No. reviews: #{game.reviews}
            Release date: #{game.release_date}
            #{game.desc}
-                                         ".gsub(/^\s*/, '')
+                                       ".gsub(/^\s*/, '').strip
            else
-           confused(input)
-           end
+            confused(input)
+          end
         when "list"
           list_vgs
         when  "exit"
@@ -50,9 +50,10 @@ class Vgpop::CLI
    def confused(input)
      puts "User used #{input}, it wasn't very effective."
    end
-  def goodbye
+
+   def goodbye
     puts "See you later, gamer!"
-  end
+   end
 
 
 
