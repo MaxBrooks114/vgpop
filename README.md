@@ -1,8 +1,6 @@
 # Vgpop
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/vgpop`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is a ruby gem navigated by a CLI, which let's you view 10 popular video games out now according to Gamerankings.com
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Type 'vgpop' and follow the instructions as displayed by the CLI.
 
 ## Development
 

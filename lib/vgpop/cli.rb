@@ -7,34 +7,41 @@ class Vgpop::CLI
   end
 
   def list_vgs
-    puts "The current most popular games according to gamerankings.com:"
+    puts "============================================================="
+    puts "The current most popular games according to gamerankings.com"
+    puts "============================================================="
     @games = Vgpop::Game.games
     @games.each.with_index(1) do |game, i|
-      puts "#{i}. #{game.name}"
+      puts "--#{i}. #{game.name}"
     end
+    puts "============================================================="
   end
 
    def menu
      input = nil
      while input!= "exit"
-       puts "
-       Enter the number of the game you are interested in to see information about it.".gsub(/^\s*/, '')
-       puts "To see the list again enter list"
-       puts "Otherwise enter exit to leave"
+       puts "You can:"
+       puts "-- Enter the number of the game in this list to see information about it".gsub(/^\s*/, '')
+       puts "-- Or to see the list again enter \'list\'"
+       puts "-- Otherwise to exit the CLI enter \'exit\'"
+       puts "============================================================="
         input = gets.strip.downcase
-        case input.downcase
+        case input
         when "#{input.to_i}"
           if @games[input.to_i- 1] != nil && input.to_i != 0
            game = @games[input.to_i- 1]
            Vgpop::Gamescraper.new(game.url).scrape_game(input)
-           puts "#{game.name}
-           Console: #{game.console}
+           puts"---------------------------------"
+           puts "#{game.name}"
+           puts"---------------------------------"
+           puts "Console: #{game.console}
            Genre: #{game.genre}
-           Aggregated review score:#{game.score}
+           Aggregated review score: #{game.score}
            No. reviews: #{game.reviews}
-           Release date: #{game.release_date}
-           #{game.desc}
-                                       ".gsub(/^\s*/, '').strip
+           Release date: #{game.release_date}".gsub(/^\s*/, '').strip
+           puts "--------------------------------"
+           puts "#{game.desc}"
+           puts "============================================================="
            else
             confused(input)
           end
@@ -54,6 +61,7 @@ class Vgpop::CLI
 
    def goodbye
     puts "See you later, gamer!"
+    puts "--------------------------------"
    end
 
 
