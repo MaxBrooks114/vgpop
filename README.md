@@ -1,6 +1,6 @@
 # Vgpop
 
-This is a ruby gem navigated by a CLI, which let's you view 10 popular video games out now according to Gamerankings.com
+This is a ruby gem navigated by a CLI, which lets you view 10 popular video games out now according to Gamerankings.com
 
 ## Installation
 
