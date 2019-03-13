@@ -41,7 +41,17 @@ class Vgpop::CLI
            Release date: #{game.release_date}".gsub(/^\s*/, '').strip
            puts "--------------------------------"
            puts "#{game.desc}"
+           puts "--------------------------------"
+           puts "Would you like to purchase this game? If so, type \'yes\'"
+           choice = gets.strip.downcase
+           case choice
+           when "yes"
+            puts "#{game.purchase_url}"
+           else
+            list_vgs
+            end
            puts "============================================================="
+
            else
             confused(input)
           end
@@ -68,3 +78,4 @@ class Vgpop::CLI
 
 
 end
+
