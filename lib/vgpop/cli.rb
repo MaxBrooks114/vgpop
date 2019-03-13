@@ -45,6 +45,7 @@ class Vgpop::CLI
            puts "Would you like to purchase this game? If so, type \'yes\'"
            choice = gets.strip.downcase
            case choice
+<<<<<<< HEAD
             when "yes"
               Launchy.open("#{game.purchase_url}")
             when "exit"
@@ -52,6 +53,15 @@ class Vgpop::CLI
             else
               menu
            end
+=======
+           when "yes"
+            puts "#{game.purchase_url}"
+           else
+            list_vgs
+            end
+           puts "============================================================="
+
+>>>>>>> 2a2ed52be646a9bcc412235c78c89d46d6472437
            else
             confused(input)
           end
@@ -78,3 +88,4 @@ class Vgpop::CLI
 
 
 end
+
