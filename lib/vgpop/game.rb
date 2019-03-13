@@ -1,6 +1,6 @@
 class Vgpop::Game
 
-   attr_accessor :name, :console, :score, :desc, :genre, :reviews, :release_date, :url
+   attr_accessor :name, :console, :score, :desc, :genre, :reviews, :release_date, :url, :purchase_url
 
 
   @@games=[]

@@ -30,7 +30,7 @@ class Vgpop::CLI
         when "#{input.to_i}"
           if @games[input.to_i- 1] != nil && input.to_i != 0
            game = @games[input.to_i- 1]
-           Vgpop::Gamescraper.new(game.url).scrape_game(input)
+           Vgpop::Gamescraper.new.scrape_game(game.url,input)
            puts"---------------------------------"
            puts "#{game.name}"
            puts"---------------------------------"
@@ -41,7 +41,17 @@ class Vgpop::CLI
            Release date: #{game.release_date}".gsub(/^\s*/, '').strip
            puts "--------------------------------"
            puts "#{game.desc}"
-           puts "============================================================="
+           puts "--------------------------------"
+           puts "Would you like to purchase this game? If so, type \'yes\'"
+           choice = gets.strip.downcase
+           case choice
+            when "yes"
+              Launchy.open("#{game.purchase_url}")
+            when "exit"
+              goodbye
+            else
+              menu
+           end
            else
             confused(input)
           end

@@ -1,4 +1,3 @@
-require "pry"
 class Vgpop::Scraper
 
     def scrape_gamerankings
@@ -9,6 +8,7 @@ class Vgpop::Scraper
           game.console = tr.text.scan(/\(([^\)]+)\)/).last.first
           game.score = tr.text.scan(/(\d\S*%)/).last.join
           game.url = "https://www.gamerankings.com#{tr.search("a").attr("href").text}"
+          game.purchase_url = "https://www.gamestop.com/browse?nav=16k-3-#{game.name},28zu0"
           game.save
       end
     end

@@ -1,6 +1,7 @@
 require 'open-uri'
 require 'nokogiri'
 require 'pry'
+require 'launchy'
 
 require_relative "./vgpop/version"
 require_relative './vgpop/scraper'
