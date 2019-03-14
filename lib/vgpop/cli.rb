@@ -48,7 +48,7 @@ class Vgpop::CLI
            choice = gets.strip.downcase
            case choice
             when "yes"
-              Launchy.open("#{game.purchase_url}")
+              system("open","#{game.purchase_url}") || system("xdg-open","#{game.purchase_url}")|| system("start #{game.purchase_url}") || Launchy.open("#{game.purchase_url}")
            end
           else
            confused(input)
