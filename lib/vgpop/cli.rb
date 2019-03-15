@@ -52,7 +52,7 @@ class Vgpop::CLI
               if Launchy::Application::Browser.new.app_list !=[]
                 Launchy.open("#{game.purchase_url}")
               else
-                 puts "Your IDE does not support this functionality, please copy and paste this url into your browser #{game.purchase_url}"
+                 puts "Your environment does not support this functionality, please copy and paste this url into your browser #{game.purchase_url}"
               end
             end
           else
