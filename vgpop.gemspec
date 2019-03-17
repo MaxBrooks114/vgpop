@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
     spec.metadata["allowed_push_host"] = "Set to 'https://mygemserver.com'"
-    spec.metadata["homepage_uri"] = "https://mygemserver.com'/api/v1/api_key"
+    spec.metadata["homepage_uri"] = "https://github.com/MaxBrooks114/vgpop"
     spec.metadata["source_code_uri"] = "https://github.com/MaxBrooks114/vgpop"
     spec.metadata["changelog_uri"] = "https://github.com/MaxBrooks114/vgpop/blob/master/CHANGELOG.md"
   else
