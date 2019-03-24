@@ -14,7 +14,13 @@ class Vgpop::Game
     @@games
   end
 
+  def self.clear_all
+    @@games.clear
+  end
 
+ def sort_by_name
+    @@games.sort_by {|game| game.name}.each {|game| puts "#{game}"}
 
+ end
 
 end

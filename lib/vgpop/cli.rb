@@ -2,12 +2,13 @@ require "pry"
 class Vgpop::CLI
 
   def call
-    Vgpop::Scraper.new.scrape_gamerankings
     list_vgs
     menu
   end
 
   def list_vgs
+    Vgpop::Game.clear_all
+    Vgpop::Scraper.new.scrape_gamerankings
     puts "============================================================="
     puts "The current most popular games according to gamerankings.com"
     puts "============================================================="
